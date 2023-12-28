@@ -1,0 +1,54 @@
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<TabPane xmlns="http://javafx.com/javafx"
+         xmlns:fx="http://javafx.com/fxml/1"
+         fx:controller="application.Controller">
+    <tabs>
+        <Tab text="Data Entry">
+            <content>
+                <VBox alignment="center" spacing="10">
+                
+                 <Label text="Enter the number of elements in the array to be sorted:" style="-fx-font-size: 18px;" />
+    <TextField fx:id="numField" promptText="Type here..." />
+    <Label text="Enter the elements of the array to be sorted:" style="-fx-font-size: 18px;" />
+    <TextField fx:id="numberField" promptText="Type here..." />
+   
+    
+    <Button text="Save" onAction="#switchToScreen2" />
+                </VBox>
+            </content>
+        </Tab>
+        
+        
+        <Tab text="Data Sorting">
+            <content>
+                <VBox alignment="center" spacing="10">
+    
+     <Label text="How do you want the array to be sorted?" style="-fx-font-size: 24px;" />
+
+    <HBox spacing="20" alignment="CENTER">
+       <Button text="Merge Sort" style="-fx-font-size: 18px;" onAction="#mergeSortAction" />
+       <Button text="Bubble Sort" style="-fx-font-size: 18px;" onAction="#bubbleSortAction" />
+       <Button text="Radix Sort" style="-fx-font-size: 18px;" onAction="#radixSortAction" />
+    </HBox>
+    
+     </VBox>
+            </content>
+        </Tab>
+        
+        <Tab text="Result">
+    <content>
+        <VBox alignment="center" spacing="20">
+      
+            <Label text="Result of the sorting process:" style="-fx-font-size: 24px;" />
+
+
+            <TextArea fx:id="resultTextArea" prefWidth="400" prefHeight="200" />
+        </VBox>
+    </content>
+</Tab>
+
+
+    </tabs>
+</TabPane>
