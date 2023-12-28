@@ -3,7 +3,7 @@
 
 <TabPane xmlns="http://javafx.com/javafx"
          xmlns:fx="http://javafx.com/fxml/1"
-         fx:controller="application.Controller">
+         fx:controller="application.controller.DataManipulationController">
     <tabs>
         <Tab text="Data Entry">
             <content>

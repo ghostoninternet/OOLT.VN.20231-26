@@ -1,11 +1,11 @@
-package application;
+package application.controller;
 
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
 import javafx.scene.control.TabPane;
 
-public class Controller {
+public class DataManipulationController {
 
     @FXML
     private TextField numField;
