@@ -15,6 +15,7 @@ public class Main extends Application {
 		try {
 			stage = primaryStage;
 			Parent root = FXMLLoader.load(getClass().getResource("/application/view/MainMenu.fxml"));
+			Parent root = FXMLLoader.load(getClass().getResource("/application/view/DataManipulation.fxml"));
 			Scene scene = new Scene(root);
 			stage.setTitle("Sorting Algorithm");
 			stage.setScene(scene);
