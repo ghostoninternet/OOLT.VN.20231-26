@@ -1,0 +1,27 @@
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.controller.DataSortingVisualizationController">
+  <center>
+       <AnchorPane prefHeight="500.0" prefWidth="800.0" style="-fx-background-color: White;" >
+                <children>
+                <Button fx:id="btnBack" text="Back" onAction="#switchToMainMenu" layoutX="280.0" layoutY="350.0" mnemonicParsing="false" prefWidth="250.0" style="-fx-background-color: MediumPurple;" textFill="WHITE">
+                 <font>
+                  <Font name="Bell MT" size="30.0" />
+               </font>
+            </Button>
+             
+                
+                 <Label text="Result of the sorting process:" layoutX="120.0" layoutY="80.0" textFill="#693030" >
+                 <font>
+                  <Font name="Arial" size="24.0" />
+               </font>
+               </Label>
+    <TextArea fx:id="resultTextArea" promptText="Type here..." layoutX="120.0" layoutY="200.0" prefHeight="50.0"  prefWidth="600.0" />
+    
+      </children>
+  
+      </AnchorPane>
+      </center>
+</BorderPane>

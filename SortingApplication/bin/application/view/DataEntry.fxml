@@ -1,0 +1,36 @@
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.Font?>
+
+
+<BorderPane xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.controller.DataEntryController">
+  <center>
+       <AnchorPane prefHeight="500.0" prefWidth="800.0" style="-fx-background-color: White;" >
+                <children>
+                <Button fx:id="btnSave" text="Save" onAction="#switchToDataSortingVisualization" layoutX="280.0" layoutY="350.0" prefWidth="250.0" style="-fx-background-color: MediumPurple;" textFill="WHITE">
+                 <font>
+                  <Font name="Bell MT" size="30.0" />
+               </font>
+            </Button>
+             
+                
+                 <Label text="Enter the number of elements in the array to be sorted:" layoutX="120.0" layoutY="80.0" textFill="#693030" >
+                 <font>
+                  <Font name="Arial" size="24.0" />
+               </font>
+               </Label>
+    <TextField fx:id="numField" promptText="Type here..." layoutX="120.0" layoutY="130.0" prefHeight="30.0" prefWidth="600.0" />
+
+    <Label text="Enter the elements of the array to be sorted:" layoutX="120.0" layoutY="200.0" textFill="#693030" >
+                 <font>
+                  <Font name="Arial" size="24.0" />
+               </font>
+               </Label>
+    <TextField fx:id="numberField" promptText="Type here..." layoutX="120.0" layoutY="250.0" prefHeight="30.0" prefWidth="600.0" />
+   
+    </children>
+  
+      </AnchorPane>
+      </center>
+</BorderPane>
+   
