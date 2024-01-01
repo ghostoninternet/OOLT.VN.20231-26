@@ -7,21 +7,31 @@ import javax.swing.JOptionPane;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.control.Labeled;
+import javafx.scene.control.Menu;
+import javafx.scene.control.MenuBar;
 import javafx.stage.Stage;
 
 public class MainScreenController {
 
-    @FXML
-    private Button btnBubbleSort;
+	@FXML
+	private Button btnMergeSort;
 
-    @FXML
-    private Button btnQuickSort;
+	@FXML
+	private Button btnCountingSort;
 
+	@FXML
+	private Button btnRadixSort;
+
+	@FXML
+	private MenuBar menuBar;
+	
     @FXML
-    private Button btnInsertionSort;
+    private Menu menuItem;
     
     @FXML 
     void menuAbout(ActionEvent event) {
@@ -39,40 +49,24 @@ public class MainScreenController {
     }
     
     @FXML 
-    void menuExit(ActionEvent e) {
-    	Stage stage = (Stage) btnBubbleSort.getScene().getWindow();
-    	int i = JOptionPane.showConfirmDialog(null, "Do you really want to exit?","EXIT",JOptionPane.YES_NO_OPTION);
-    	if (i == 0) {
-    		stage.close();
+    void menuExit(ActionEvent event) {
+    	// Todo: Exit program
+    }
+
+    @FXML
+    void chooseSortingAlgorithm(ActionEvent event) {
+    	String buttonText = ((Labeled) event.getSource()).getText();
+    	try {
+    		final String DATA_FXML_FILE_PATH = "/application/view/DataEntry.fxml";
+        	FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource(DATA_FXML_FILE_PATH));
+        	fxmlLoader.setController(new DataEntryController(buttonText));
+        	Parent root = fxmlLoader.load();
+        	Stage stage = (Stage)((Node) event.getSource()).getScene().getWindow();
+        	stage.setScene(new Scene(root));
+        	stage.setTitle("Data Entry");
+        	stage.show();
+    	} catch (IOException e) {
+    		e.printStackTrace();
     	}
     }
-    
-
-    @FXML
-    void bubbleSortScreen(ActionEvent event) throws IOException {
-    	Stage stage = (Stage) btnBubbleSort.getScene().getWindow();
-		Parent root = FXMLLoader.load(getClass().getResource("/application/bubbleSort.fxml"));
-		Scene scene = new Scene(root);
-		stage.setTitle("Bubble Sort");
-		stage.setScene(scene);
-    }
-
-    @FXML
-    void insertionSortScreen(ActionEvent event) throws IOException {
-    	Stage stage = (Stage) btnBubbleSort.getScene().getWindow();
-		Parent root = FXMLLoader.load(getClass().getResource("/application/insertionSort.fxml"));
-		Scene scene = new Scene(root);
-		stage.setTitle("Insertion Sort");
-		stage.setScene(scene);
-    }
-
-    @FXML
-    void quickSortScreen(ActionEvent event) throws IOException {
-    	Stage stage = (Stage) btnBubbleSort.getScene().getWindow();
-		Parent root = FXMLLoader.load(getClass().getResource("/application/quickSort.fxml"));
-		Scene scene = new Scene(root);
-		stage.setTitle("Quick Sort");
-		stage.setScene(scene);
-    }
-
 }

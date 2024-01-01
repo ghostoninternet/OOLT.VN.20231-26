@@ -9,21 +9,21 @@
 <?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.text.Font?>
 
-<BorderPane xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.controller.MainScreenController">
+<BorderPane xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.controller.MainScreenController">
    <center>
       <AnchorPane prefHeight="768.0" prefWidth="1024.0" style="-fx-background-color: White;" BorderPane.alignment="CENTER">
          <children>
-            <Button fx:id="btnBubbleSort" layoutX="92.0" layoutY="426.0" mnemonicParsing="false" onAction="#bubbleSortScreen" prefWidth="250.0" style="-fx-background-color: CornflowerBlue;" text="Bubble Sort" textFill="WHITE">
+            <Button fx:id="btnMergeSort" layoutX="92.0" layoutY="426.0" mnemonicParsing="false" onAction="#chooseSortingAlgorithm" prefWidth="250.0" style="-fx-background-color: CornflowerBlue;" text="Merge Sort" textFill="WHITE">
                <font>
                   <Font name="Bell MT" size="30.0" />
                </font>
             </Button>
-            <Button fx:id="btnQuickSort" layoutX="374.0" layoutY="426.0" mnemonicParsing="false" onAction="#quickSortScreen" prefWidth="250.0" style="-fx-background-color: MediumPurple;" text="Quick Sort" textFill="WHITE">
+            <Button fx:id="btnCountingSort" layoutX="374.0" layoutY="426.0" mnemonicParsing="false" onAction="#chooseSortingAlgorithm" prefWidth="250.0" style="-fx-background-color: MediumPurple;" text="Counting Sort" textFill="WHITE">
                <font>
                   <Font name="Segoe UI" size="30.0" />
                </font>
             </Button>
-            <Button fx:id="btnInsertionSort" layoutX="664.0" layoutY="423.0" mnemonicParsing="false" onAction="#insertionSortScreen" prefWidth="250.0" style="-fx-background-color: MediumOrchid;" text="Insertion Sort" textFill="WHITE">
+            <Button fx:id="btnRadixSort" layoutX="668.0" layoutY="426.0" mnemonicParsing="false" onAction="#chooseSortingAlgorithm" prefWidth="250.0" style="-fx-background-color: MediumOrchid;" text="Radix Sort" textFill="WHITE">
                <font>
                   <Font name="Bell MT" size="30.0" />
                </font>
