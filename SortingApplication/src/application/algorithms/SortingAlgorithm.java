@@ -3,10 +3,12 @@ package application.algorithms;
 import java.util.Random;
 
 public abstract class SortingAlgorithm {
-	protected int [] array;
+	protected int[] array;
+	protected int arrayLength;
 	
-	public SortingAlgorithm(int [] array) {
+	public SortingAlgorithm(int[] array, int arrayLength) {
 		this.array = array;
+		this.arrayLength = arrayLength;
 	}
 	
 	// Contructor generate random array

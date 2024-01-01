@@ -4,8 +4,8 @@ import java.util.Arrays;
 
 public class RadixSort extends SortingAlgorithm {
 	
-	public RadixSort (int [] array) {
-		super(array);
+	public RadixSort (int [] array, int arrayLength) {
+		super(array, arrayLength);
 	}
 	public RadixSort (int length) {
 		super(length);
@@ -13,7 +13,7 @@ public class RadixSort extends SortingAlgorithm {
 	// Find max of array
 	public int getMax(int [] array){
         int max = array[0];
-        for(int i = 1; i < array.length; i++){
+        for(int i = 1; i < arrayLength; i++){
             if(max < array[i]){
                max = array[i];
             }
@@ -46,7 +46,7 @@ public class RadixSort extends SortingAlgorithm {
         // Find the maximum number to know number of digits
         int max = this.getMax(array);
         for(int exp = 1; max / exp > 0; exp *= 10){
-            countSort(array, array.length, exp);
+            countSort(array, arrayLength, exp);
         }
     }
     

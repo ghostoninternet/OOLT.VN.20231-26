@@ -1,58 +1,111 @@
-package application;
+package application.controller;
 
+import java.io.IOException;
+
+import javax.swing.JOptionPane;
+
+import application.algorithms.CountingSort;
+import application.algorithms.MergeSort;
+import application.algorithms.RadixSort;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.scene.control.Button;
-import javafx.stage.Stage;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.fxml.FXMLLoader;
-import java.io.IOException;
+import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
-import javafx.scene.control.Alert;
-import javafx.scene.control.Alert.AlertType;
+import javafx.stage.Stage;
+import javafx.scene.control.TextArea;
 
 public class DataEntryController {
+	
+	private int arrayOfNums[];
+	private String typeOfAlgorithm;
+	private int lengthOfArray;
+	
+	@FXML
+    private TextField lengthOfArrayField;
+	
+	@FXML
+    private Button saveArrayLengthBtn;
 
     @FXML
-    private TextField numField;
+    private TextField valueField;
+    
+    @FXML
+    private Button saveValuesBtn;
 
     @FXML
-    private TextField numberField;
+    private Button startSortAlgoButton;
 
     @FXML
-    private Button btnSave;
-   
+    private TextArea resultBeforeTextArea;
+
     @FXML
-    private void switchToDataSortingVisualization(ActionEvent event) {
-        if (isValidInput()) {
-            
-        	 try {
-                 Stage stage = (Stage) btnSave.getScene().getWindow();
-                 Parent root = FXMLLoader.load(getClass().getResource("/application/view/DataSortingVisualization.fxml"));
-                 Scene scene = new Scene(root);
-                 stage.setTitle("Data Sorting Visualization");
-                 stage.setScene(scene);
-             } catch (IOException e) {
-                 e.printStackTrace();
-             }
-         
-        } else {
-        	 showAlert("Error", "Invalid Input", "The number of elements in the array is not correct.");
-        }
+    private TextArea resultAfterTextArea;
+    
+    @FXML
+    private Button btnBack;
+        
+    public DataEntryController(String typeOfAlgorithm) {
+    	this.typeOfAlgorithm = typeOfAlgorithm;
     }
 
-    // Kiểm tra dữ liệu nhập vào có hợp lệ hay không
-    private boolean isValidInput() {
-        return true;  // Nhập điều kiện
+	@FXML
+    void saveArrayLength(ActionEvent event) {
+    	try {
+    		lengthOfArray = Integer.parseInt(lengthOfArrayField.getText());
+    		if (lengthOfArray <= 0) {
+        		JOptionPane.showMessageDialog(null, "Please enter value greater than 0!", "Error", JOptionPane.ERROR_MESSAGE);
+        	} else {
+        		arrayOfNums = new int[lengthOfArray];
+        		saveArrayLengthBtn.setDisable(true);
+        		saveValuesBtn.setDisable(false);
+        	}
+    	} catch (NumberFormatException error) {
+    		JOptionPane.showMessageDialog(null, "Please enter integer value only!", "Error", JOptionPane.ERROR_MESSAGE);
+    	}
     }
 
-
-private void showAlert(String title, String headerText, String contentText) {
-    Alert alert = new Alert(AlertType.ERROR);
-    alert.setTitle(title);
-    alert.setHeaderText(headerText);
-    alert.setContentText(contentText);
-    alert.showAndWait();
-}
+    @FXML
+    void saveValues(ActionEvent event) {
+    	int errorFlag = 0;
+    	String[] valueArray = valueField.getText().split(" ", 0);
+    	if (valueArray.length < lengthOfArray) {
+    		JOptionPane.showMessageDialog(null, "Please enter " + (lengthOfArray - valueArray.length) + " more value(s)" , "Error", JOptionPane.WARNING_MESSAGE);
+    	} else if (valueArray.length > lengthOfArray) {
+    		JOptionPane.showMessageDialog(null, "You have entered " + (valueArray.length - lengthOfArray) + " more value(s) than the current number of values" , "Error", JOptionPane.ERROR_MESSAGE);
+    	} else {
+    		for (int i = 0; i < valueArray.length; i++) {
+    			try {
+    				arrayOfNums[i] = Integer.parseInt(valueArray[i]);
+    	    	} catch (NumberFormatException error) {
+    	    		errorFlag = 1;
+    	    		JOptionPane.showMessageDialog(null, "Please enter integer value only!", "Error", JOptionPane.ERROR_MESSAGE);
+    	    		break;
+    	    	}
+    		}
+    		if (errorFlag == 0) {
+    			try {
+    	    		final String DATA_FXML_FILE_PATH = "/application/view/DataSortingVisualization.fxml";
+    	        	FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource(DATA_FXML_FILE_PATH));
+    	        	fxmlLoader.setController(new DataSortingVisualizeController(valueField, typeOfAlgorithm, arrayOfNums, lengthOfArray));
+    	        	Parent root = fxmlLoader.load();
+    	        	Stage stage = (Stage)((Node) event.getSource()).getScene().getWindow();
+    	        	stage.setScene(new Scene(root));
+    	        	stage.setTitle("Data Entry");
+    	        	stage.show();
+    	    	} catch (IOException e) {
+    	    		e.printStackTrace();
+    	    	}
+    		}
+    	}
+    	
+    }
+    
+    @FXML
+    public void initialize() {
+    	saveValuesBtn.setDisable(true);
+    }
 }

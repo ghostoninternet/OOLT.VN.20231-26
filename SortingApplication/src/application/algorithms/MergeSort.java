@@ -2,8 +2,8 @@ package application.algorithms;
 
 public class MergeSort extends SortingAlgorithm{
 	
-	public MergeSort(int[] array) {
-	        super(array);
+	public MergeSort(int[] array, int arrayLength) {
+	        super(array, arrayLength);
 	}
 	public MergeSort(int length) {
         super(length);
@@ -66,6 +66,9 @@ public class MergeSort extends SortingAlgorithm{
     }
     @Override 
 	public void Sort() {
-		mergeSort(array, 0, array.length - 1);
+    	for(int i = 0; i < 5; i++) {
+    		System.out.println(array[i]);
+    	}
+		mergeSort(array, 0, arrayLength - 1);
 	}
 }

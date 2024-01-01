@@ -1,8 +1,8 @@
 package application.algorithms;
 import java.util.Arrays;
 public class CountingSort extends SortingAlgorithm {
-	public CountingSort(int [] array) {
-		super(array);
+	public CountingSort(int [] array, int arrayLength) {
+		super(array, arrayLength);
 	}
 	public CountingSort(int length) {
 		super(length);
@@ -40,6 +40,6 @@ public class CountingSort extends SortingAlgorithm {
 	}
 	@Override
 	public void Sort() {
-		countingSort(array, array.length);
+		countingSort(array, arrayLength);
 	}
 }
