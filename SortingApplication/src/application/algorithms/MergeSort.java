@@ -52,6 +52,7 @@ public class MergeSort extends SortingAlgorithm{
             rightIndex++;
             subIndex++;
         }
+        
     }
 	
     public void mergeSort(int [] array, int left, int right){
