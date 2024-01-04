@@ -62,7 +62,7 @@ public class DataSortingVisualizeController {
     	if (typeOfAlgorithm.equals("Merge Sort")) {
     		MergeSort mergeSort = new MergeSort(arrayOfNums, lengthOfArray);
     		mergeSort.Sort();
-    	} else if (typeOfAlgorithm.equals("Couting Sort")) {
+    	} else if (typeOfAlgorithm.equals("Counting Sort")) {
     		CountingSort countingSort = new CountingSort(arrayOfNums, lengthOfArray);
     		countingSort.Sort();
     	} else if (typeOfAlgorithm.equals("Radix Sort")) {
