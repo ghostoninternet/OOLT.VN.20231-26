@@ -37,7 +37,7 @@ public class MainScreenController {
     void menuAbout(ActionEvent event) {
     	   try {
     	        FXMLLoader fxmlLoader = new FXMLLoader();
-    	        fxmlLoader.setLocation(getClass().getResource("/application/About.fxml"));
+    	        fxmlLoader.setLocation(getClass().getResource("/application/view/About.fxml"));
     	        Scene scene = new Scene(fxmlLoader.load(), 600, 400);
     	        Stage newstage = new Stage();
     	        newstage.setTitle("Info");
@@ -49,8 +49,9 @@ public class MainScreenController {
     }
     
     @FXML 
-    void menuExit(ActionEvent event) {
-    	// Todo: Exit program
+    void menuExit(ActionEvent event) {        	
+        Stage stage = (Stage)((Node) btnMergeSort).getScene().getWindow();
+        stage.close();
     }
 
     @FXML
