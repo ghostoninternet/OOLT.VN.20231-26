@@ -47,6 +47,9 @@ public class DataEntryController {
     
     @FXML
     private Button btnBack;
+    
+    @FXML
+    private Button createRandomArrayBtn;
         
     public DataEntryController(String typeOfAlgorithm) {
     	this.typeOfAlgorithm = typeOfAlgorithm;
@@ -101,6 +104,11 @@ public class DataEntryController {
     	    	}
     		}
     	}
+    	
+    }
+    
+    @FXML
+    public void createRandomArray() {
     	
     }
     

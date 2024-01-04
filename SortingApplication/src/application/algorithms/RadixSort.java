@@ -2,7 +2,10 @@ package application.algorithms;
 
 import java.util.Arrays;
 
+import javafx.scene.control.TextArea;
+
 public class RadixSort extends SortingAlgorithm {
+	private TextArea resultBeforeTextArea;
 	
 	public RadixSort (int [] array, int arrayLength) {
 		super(array, arrayLength);
