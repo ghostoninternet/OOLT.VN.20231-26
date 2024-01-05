@@ -9,44 +9,54 @@
 
 <BorderPane xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1">
    <bottom>
-       <AnchorPane prefHeight="500.0" prefWidth="800.0" style="-fx-background-color: White;" BorderPane.alignment="CENTER">
+       <AnchorPane prefHeight="880.0" prefWidth="1320.0" style="-fx-background-color: White;" BorderPane.alignment="CENTER">
                 <children>
              
                 
-                 <Label layoutX="172.0" layoutY="14.0" text="Result of the sorting process" textFill="#693030">
+                 <Label layoutX="356.0" layoutY="31.0" text="Result of the sorting process" textFill="#693030">
                  <font>
-                  <Font name="Arial" size="36.0" />
+                  <Font name="Arial" size="48.0" />
                </font>
                </Label>
-            <Label layoutX="326.0" layoutY="67.0" text="Your values" textFill="#693030">
+            <Label layoutX="586.0" layoutY="111.0" text="Your values" textFill="#693030">
                <font>
                   <Font name="Arial" size="28.0" />
                </font>
             </Label>
-    <TextArea fx:id="resultBeforeTextArea" editable="false" layoutX="105.0" layoutY="111.0" prefHeight="40.0" prefWidth="600.0" promptText="Type here...">
+    <TextArea fx:id="resultBeforeTextArea" editable="false" layoutX="130.0" layoutY="154.0" prefHeight="72.0" prefWidth="1060.0" promptText="Type here...">
                <font>
                   <Font size="24.0" />
                </font></TextArea>
-            <Button fx:id="backToMainMenuBtn" layoutX="280.0" layoutY="417.0" mnemonicParsing="false" onAction="#backToMainMenu" prefWidth="250.0" style="-fx-background-color: MediumPurple;" text="Back" textFill="WHITE">
+            <Button fx:id="backToMainMenuBtn" layoutX="535.0" layoutY="772.0" mnemonicParsing="false" onAction="#backToMainMenu" prefWidth="250.0" style="-fx-background-color: MediumPurple;" text="Back" textFill="WHITE">
                <font>
                   <Font name="Bell MT" size="30.0" />
                </font>
             </Button>
-            <Label layoutX="360.0" layoutY="263.0" text="Result" textFill="#693030">
+            <Label layoutX="621.0" layoutY="628.0" text="Result" textFill="#693030">
                <font>
                   <Font name="Arial" size="28.0" />
                </font>
             </Label>
-            <TextArea fx:id="resultAfterTextArea" editable="false" layoutX="105.0" layoutY="307.0" prefHeight="40.0" prefWidth="600.0" promptText="Type here...">
+            <TextArea fx:id="sortingProcessArea" editable="false" layoutX="131.0" layoutY="358.0" prefHeight="250.0" prefWidth="1060.0" promptText="Type here...">
                <font>
                   <Font size="24.0" />
                </font>
             </TextArea>
-                <Button fx:id="startSortAlgorithmBtn" layoutX="280.0" layoutY="195.0" mnemonicParsing="false" onAction="#startSortAlgorithm" prefWidth="250.0" style="-fx-background-color: MediumPurple;" text="Start Sort Algorithm" textFill="WHITE">
+                <Button fx:id="startSortAlgorithmBtn" layoutX="535.0" layoutY="241.0" mnemonicParsing="false" onAction="#startSortAlgorithm" prefWidth="250.0" style="-fx-background-color: MediumPurple;" text="Start Sort Algorithm" textFill="WHITE">
                  <font>
                   <Font name="Bell MT" size="24.0" />
                </font>
             </Button>
+            <TextArea fx:id="resultAfterTextArea" editable="false" layoutX="130.0" layoutY="673.0" prefHeight="75.0" prefWidth="1060.0" promptText="Type here...">
+               <font>
+                  <Font size="24.0" />
+               </font>
+            </TextArea>
+            <Label layoutX="562.0" layoutY="312.0" text="Sorting Process" textFill="#693030">
+               <font>
+                  <Font name="Arial" size="28.0" />
+               </font>
+            </Label>
     
       </children>
   

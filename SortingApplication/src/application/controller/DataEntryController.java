@@ -93,11 +93,11 @@ public class DataEntryController {
     			try {
     	    		final String DATA_FXML_FILE_PATH = "/application/view/DataSortingVisualization.fxml";
     	        	FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource(DATA_FXML_FILE_PATH));
-    	        	fxmlLoader.setController(new DataSortingVisualizeController(valueField, typeOfAlgorithm, arrayOfNums, lengthOfArray));
+    	        	fxmlLoader.setController(new DataSortingVisualizeController(valueField, typeOfAlgorithm, arrayOfNums, lengthOfArray, 0));
     	        	Parent root = fxmlLoader.load();
     	        	Stage stage = (Stage)((Node) event.getSource()).getScene().getWindow();
     	        	stage.setScene(new Scene(root));
-    	        	stage.setTitle("Data Entry");
+    	        	stage.setTitle("Data Sorting Visualize");
     	        	stage.show();
     	    	} catch (IOException e) {
     	    		e.printStackTrace();
@@ -108,8 +108,19 @@ public class DataEntryController {
     }
     
     @FXML
-    public void createRandomArray() {
-    	
+    void createRandomArray(ActionEvent event) {
+    	try {
+    		final String DATA_FXML_FILE_PATH = "/application/view/DataSortingVisualization.fxml";
+        	FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource(DATA_FXML_FILE_PATH));
+        	fxmlLoader.setController(new DataSortingVisualizeController(typeOfAlgorithm, lengthOfArray, 1));
+        	Parent root = fxmlLoader.load();
+        	Stage stage = (Stage)((Node) event.getSource()).getScene().getWindow();
+        	stage.setScene(new Scene(root));
+        	stage.setTitle("Data Sorting Visualize");
+        	stage.show();
+    	} catch (IOException e) {
+    		e.printStackTrace();
+    	}
     }
     
     @FXML
