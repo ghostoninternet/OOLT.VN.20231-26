@@ -5,6 +5,8 @@ import java.util.Random;
 public abstract class SortingAlgorithm {
 	protected int[] array;
 	protected int arrayLength;
+	protected StringBuffer[] sortingProcessArray = new StringBuffer[10000];
+	protected int step = 1;
 	
 	public SortingAlgorithm(int[] array, int arrayLength) {
 		this.array = array;
@@ -14,6 +16,7 @@ public abstract class SortingAlgorithm {
 	// Contructor generate random array
 	public SortingAlgorithm(int length) {
 		this.array = generateRandomArray(length);
+		this.arrayLength = length;
 	}
 	
 	// Generate ramdom array with length
@@ -23,7 +26,7 @@ public abstract class SortingAlgorithm {
 	     return randomArray;
     }
 	
-	public abstract void Sort();
+	public abstract StringBuffer[] Sort();
 	// Getter SortingAlgorithm
 	public int[] getArray() {
 		return array;

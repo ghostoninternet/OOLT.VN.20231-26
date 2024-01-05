@@ -13,37 +13,43 @@
                 <children>
              
                 
-                 <Label layoutX="221.0" layoutY="139.0" text="Enter the number of elements in the array to be sorted:" textFill="#693030">
+                 <Label layoutX="75.0" layoutY="24.0" text="Enter the number of elements in the array to be sorted:" textFill="#693030">
                  <font>
-                  <Font name="Arial" size="24.0" />
+                  <Font name="Arial" size="36.0" />
                </font>
                </Label>
-    <TextField fx:id="lengthOfArrayField" layoutX="213.0" layoutY="222.0" prefHeight="30.0" prefWidth="600.0" promptText="Type your array's length here. The length must be a positive integer" />
-            <Button fx:id="saveArrayLengthBtn" layoutX="387.0" layoutY="292.0" onAction="#saveArrayLength" prefWidth="250.0" style="-fx-background-color: MediumPurple;" text="Save array length" textFill="WHITE">
+    <TextField fx:id="lengthOfArrayField" layoutX="102.0" layoutY="96.0" prefHeight="30.0" prefWidth="820.0" promptText="Type your array's length here. The length must be a positive integer">
                <font>
-                  <Font name="Bell MT" size="20.0" />
+                  <Font size="24.0" />
+               </font></TextField>
+            <Button fx:id="saveArrayLengthBtn" layoutX="350.0" layoutY="189.0" onAction="#saveArrayLength" prefHeight="68.0" prefWidth="325.0" style="-fx-background-color: MediumPurple;" text="Save array length" textFill="WHITE">
+               <font>
+                  <Font name="Bell MT Bold" size="36.0" />
                </font>
             </Button>
 
-    <Label layoutX="278.0" layoutY="403.0" text="Enter the elements of the array to be sorted:" textFill="#693030">
+    <Label layoutX="160.0" layoutY="319.0" text="Enter the elements of the array to be sorted:" textFill="#693030">
                  <font>
-                  <Font name="Arial" size="24.0" />
+                  <Font name="Arial" size="36.0" />
                </font>
                </Label>
-    <TextField fx:id="valueField" layoutX="213.0" layoutY="456.0" prefHeight="30.0" prefWidth="600.0" promptText="Type your values here. All values must be integer and seperated with space (e.g: 1 2 3 4 ...)" />
-                <Button fx:id="saveValuesBtn" layoutX="388.0" layoutY="528.0" onAction="#saveValues" prefWidth="250.0" style="-fx-background-color: MediumPurple;" text="Save values" textFill="WHITE">
+    <TextField fx:id="valueField" layoutX="103.0" layoutY="397.0" prefHeight="30.0" prefWidth="820.0" promptText="Type your values here. All values must be integer and seperated with space (e.g: 1 2 3 4 ...)">
+               <font>
+                  <Font size="24.0" />
+               </font></TextField>
+                <Button fx:id="saveValuesBtn" layoutX="388.0" layoutY="489.0" onAction="#saveValues" prefWidth="250.0" style="-fx-background-color: MediumPurple;" text="Save values" textFill="WHITE">
                  <font>
-                  <Font name="Bell MT" size="20.0" />
+                  <Font name="Bell MT" size="36.0" />
                </font>
             </Button>
-            <Label layoutX="387.0" layoutY="617.0" text="Or create random array" textFill="#693030">
+            <Label layoutX="325.0" layoutY="586.0" text="Or create random array" textFill="#693030">
                <font>
-                  <Font name="Arial" size="24.0" />
+                  <Font name="Arial" size="36.0" />
                </font>
             </Label>
-            <Button fx:id="createRandomArrayBtn" layoutX="388.0" layoutY="664.0" onAction="#createRandomArray" prefWidth="250.0" style="-fx-background-color: MediumPurple;" text="Create Random Array" textFill="WHITE">
+            <Button fx:id="createRandomArrayBtn" layoutX="312.0" layoutY="665.0" onAction="#createRandomArray" prefHeight="67.0" prefWidth="400.0" style="-fx-background-color: MediumPurple;" text="Create Random Array" textFill="WHITE">
                <font>
-                  <Font name="Bell MT" size="20.0" />
+                  <Font name="Bell MT" size="36.0" />
                </font>
             </Button>
    
