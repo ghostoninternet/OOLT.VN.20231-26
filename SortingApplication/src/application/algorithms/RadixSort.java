@@ -37,11 +37,15 @@ public class RadixSort extends SortingAlgorithm {
         }
         sortingProcess.append("Count of occurrences: " + countOfOccurrences + "\n");
         // Build the output array
-        String resultSortedArray = "";
+        String elementCountResult = "";
         for (int i = n - 1; i >= 0; i--) {
             output[count[(array[i] / exp) % 10] - 1] = array[i];
+            elementCountResult += "Element " + array[i] + ": " + count[(array[i] / exp) % 10] + "\n";
             count[(array[i] / exp) % 10]--;
         }
+        sortingProcess.append("Element count result: \n" + elementCountResult);
+        
+        String resultSortedArray = "";
         for(int i = 0; i < n; i++){
             array[i] = output[i];
             resultSortedArray += array[i] + " ";
