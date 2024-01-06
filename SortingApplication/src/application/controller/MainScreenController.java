@@ -26,12 +26,6 @@ public class MainScreenController {
 
 	@FXML
 	private Button btnRadixSort;
-
-	@FXML
-	private MenuBar menuBar;
-	
-    @FXML
-    private Menu menuItem;
     
     @FXML 
     void menuAbout(ActionEvent event) {

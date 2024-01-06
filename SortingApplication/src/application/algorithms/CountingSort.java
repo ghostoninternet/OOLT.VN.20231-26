@@ -24,11 +24,16 @@ public class CountingSort extends SortingAlgorithm {
         Arrays.fill(countArray,0);
         // Store the count of each element
         String countOfEachElement = "";
+        int last = -1;
         for (int i = 0; i < size; i++) {
             countArray[array[i]]++;
-            countOfEachElement += countArray[array[i]] + " ";
         }
-        sortingProcess.append("Count of each element: " + countOfEachElement + "\n\n");
+        for (int i = 0; i < size; i++) {
+        	if (last != array[i]) {
+        		countOfEachElement += "Element " + array[i] + ": " + countArray[array[i]] + "\n";
+        	}
+        }
+        sortingProcess.append("Count of each element: \n" + countOfEachElement + "\n\n");
         
         // Store the cummulative count of each array
         String cummulativeCount = "";
@@ -36,13 +41,16 @@ public class CountingSort extends SortingAlgorithm {
             countArray[i] += countArray[i - 1];
             cummulativeCount += countArray[i] + " ";
         }
-        sortingProcess.append("Cummulative count of each element: " + cummulativeCount + "\n\n");
+        sortingProcess.append("Cummulative count of array: " + cummulativeCount + "\n\n");
         // Find the index of each element of the original array in count array, and
         // place the elements in output array
+        String cummulativeCountOfElement = "";
         for (int i = size - 1; i >= 0; i--) {
+        	cummulativeCountOfElement += "Element " + array[i] + ": " + countArray[array[i]] + "\n";
             outputArray[countArray[array[i]] - 1] = array[i];
             countArray[array[i]]--;
         }
+        sortingProcess.append("Cummulative count of each element in original array: \n" + cummulativeCountOfElement);
         // Copy the sorted elements into original array
         String result = "";
         for (int i = 0; i < size; i++) {

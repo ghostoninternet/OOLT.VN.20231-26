@@ -35,18 +35,6 @@ public class DataEntryController {
     
     @FXML
     private Button saveValuesBtn;
-
-    @FXML
-    private Button startSortAlgoButton;
-
-    @FXML
-    private TextArea resultBeforeTextArea;
-
-    @FXML
-    private TextArea resultAfterTextArea;
-    
-    @FXML
-    private Button btnBack;
     
     @FXML
     private Button createRandomArrayBtn;
@@ -61,10 +49,13 @@ public class DataEntryController {
     		lengthOfArray = Integer.parseInt(lengthOfArrayField.getText());
     		if (lengthOfArray <= 0) {
         		JOptionPane.showMessageDialog(null, "Please enter value greater than 0!", "Error", JOptionPane.ERROR_MESSAGE);
+        	} else if (lengthOfArray > 20) {
+        		JOptionPane.showMessageDialog(null, "For demonstration purpose, we only accept length value less than 20", "Error", JOptionPane.ERROR_MESSAGE);
         	} else {
         		arrayOfNums = new int[lengthOfArray];
         		saveArrayLengthBtn.setDisable(true);
         		saveValuesBtn.setDisable(false);
+        		createRandomArrayBtn.setDisable(false);
         	}
     	} catch (NumberFormatException error) {
     		JOptionPane.showMessageDialog(null, "Please enter integer value only!", "Error", JOptionPane.ERROR_MESSAGE);
@@ -126,5 +117,6 @@ public class DataEntryController {
     @FXML
     public void initialize() {
     	saveValuesBtn.setDisable(true);
+    	createRandomArrayBtn.setDisable(true);
     }
 }
