@@ -5,7 +5,7 @@ import java.util.Random;
 public abstract class SortingAlgorithm {
 	protected int[] array;
 	protected int arrayLength;
-	protected StringBuffer[] sortingProcessArray = new StringBuffer[10000];
+	protected String[] sortingProcessArray = new String[10000];
 	protected int step = 1;
 	
 	public SortingAlgorithm(int[] array, int arrayLength) {
@@ -22,11 +22,11 @@ public abstract class SortingAlgorithm {
 	// Generate ramdom array with length
 	private int[] generateRandomArray(int length) {
 		 Random random = new Random();
-	     int[] randomArray =  random.ints(length, 0, 1000).toArray();
+	     int[] randomArray =  random.ints(length, 0, 100).toArray();
 	     return randomArray;
     }
 	
-	public abstract StringBuffer[] Sort();
+	public abstract String[] Sort();
 	// Getter SortingAlgorithm
 	public int[] getArray() {
 		return array;

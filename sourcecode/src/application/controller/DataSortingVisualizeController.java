@@ -25,7 +25,7 @@ public class DataSortingVisualizeController {
 	private int lengthOfArray;
 	private int isRandomArray;
 	private SortingAlgorithm sortingAlgorithm;
-	private StringBuffer[] sortingProcessArray = new StringBuffer[10000];
+	private String[] sortingProcessArray = new String[10000];
 	
     @FXML
     private TextArea resultBeforeTextArea;
@@ -79,10 +79,13 @@ public class DataSortingVisualizeController {
     		result += arrayOfNums[i] + " ";
     	}
     	String sortingProcess = "";
-    	for (StringBuffer process: sortingProcessArray) {
+    	for (String process: sortingProcessArray) {
+    		
     		try {
-    			sortingProcess += process.toString();
-    			System.out.println(process);
+    			if (!process.isEmpty()) {
+    				sortingProcess += process;
+        			System.out.println(process);
+        		}
     		}catch (NullPointerException e) {
     			continue;
     		}
