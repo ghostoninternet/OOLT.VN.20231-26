@@ -21,7 +21,7 @@ public class RadixSort extends SortingAlgorithm {
         return max;
     }
 
-    public void countSort(int [] array, int n, int exp, StringBuffer sortingProcess){
+    public void countSort(int [] array, int n, int exp, String sortingProcess){
         int [] output = new int[n];     // output array
         int [] count = new int[10];     // count array
         Arrays.fill(count,0);
@@ -35,7 +35,7 @@ public class RadixSort extends SortingAlgorithm {
             count[i] += count[i - 1];
             countOfOccurrences += count[i] + " ";
         }
-        sortingProcess.append("Count of occurrences: " + countOfOccurrences + "\n");
+        sortingProcess += "Count of occurrences: " + countOfOccurrences + "\n";
         // Build the output array
         String elementCountResult = "";
         for (int i = n - 1; i >= 0; i--) {
@@ -43,14 +43,14 @@ public class RadixSort extends SortingAlgorithm {
             elementCountResult += "Element " + array[i] + ": " + count[(array[i] / exp) % 10] + "\n";
             count[(array[i] / exp) % 10]--;
         }
-        sortingProcess.append("Element count result: \n" + elementCountResult);
+        sortingProcess += "Element count result: \n" + elementCountResult;
         
         String resultSortedArray = "";
         for(int i = 0; i < n; i++){
             array[i] = output[i];
             resultSortedArray += array[i] + " ";
         }
-        sortingProcess.append("Result of sorting: " + resultSortedArray + "\n\n");
+        sortingProcess += "Result of sorting: " + resultSortedArray + "\n\n";
         sortingProcessArray[step] = sortingProcess;
         step++;
     }
@@ -58,19 +58,19 @@ public class RadixSort extends SortingAlgorithm {
         // Find the maximum number to know number of digits
         int max = this.getMax(array);
         for(int exp = 1; max / exp > 0; exp *= 10){
-        	StringBuffer sortingProcess = new StringBuffer();
-        	sortingProcess.append("Step " + step + ": Sort array ");
+        	String sortingProcess = "";
+        	sortingProcess += "Step " + step + ": Sort array ";
         	String arrayToSort = "";
         	for (int i = 0; i < arrayLength; i++) {
         		arrayToSort += array[i] + " ";
         	}
-        	sortingProcess.append(arrayToSort + "\n");
+        	sortingProcess += arrayToSort + "\n";
             countSort(array, arrayLength, exp, sortingProcess);
         }
     }
     
     @Override
-    public StringBuffer[] Sort() {
+    public String[] Sort() {
     	radixSort(array);
     	return sortingProcessArray;
     }

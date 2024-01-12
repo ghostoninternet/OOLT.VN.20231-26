@@ -9,8 +9,8 @@ public class MergeSort extends SortingAlgorithm{
         super(length);
 	}
 	public void merge (int [] array, int left, int right, int middle){
-		StringBuffer sortingStepProcess = new StringBuffer("");
-		sortingStepProcess.append("Step " + step + ": Merge two array\n");
+		String sortingStepProcess = "";
+		sortingStepProcess += "Step " + step + ": Merge two array\n";
 		
         // Find sizes of two subarrays to be merged
         int leftArraySize = middle - left + 1;
@@ -32,8 +32,8 @@ public class MergeSort extends SortingAlgorithm{
             rightArrayString += rightArray[j] + " ";
         }
         
-        sortingStepProcess.append("Left array to merge: " + leftArrayString + "\n");
-        sortingStepProcess.append("Right array to merge: " + rightArrayString + "\n");
+        sortingStepProcess += "Left array to merge: " + leftArrayString + "\n";
+        sortingStepProcess += "Right array to merge: " + rightArrayString + "\n";
         // Initial indices of left and right subarrays
         int leftIndex = 0;
         int rightIndex = 0;
@@ -66,7 +66,7 @@ public class MergeSort extends SortingAlgorithm{
         for (int i = left; i <= right; i++) {
         	mergedArray += array[i] + " ";
         }
-        sortingStepProcess.append("Result of merge: " + mergedArray + "\n\n");
+        sortingStepProcess += "Result of merge: " + mergedArray + "\n\n";
         sortingProcessArray[step] = sortingStepProcess;
         step++;
     }
@@ -79,8 +79,8 @@ public class MergeSort extends SortingAlgorithm{
             	arrayToDivide += array[i] + " ";
             }
             
-            StringBuffer sortingStepProcess = new StringBuffer("");
-            sortingStepProcess.append("Step " + step + ": Divide array " + "[" + arrayToDivide + "]" + " into two array\n");
+            String sortingStepProcess = "";
+            sortingStepProcess += "Step " + step + ": Divide array " + "[" + arrayToDivide + "]" + " into two array\n";
             String leftArray = "";
             String rightArray = "";
             for (int i = left; i <= middle; i++) {
@@ -89,8 +89,8 @@ public class MergeSort extends SortingAlgorithm{
             for (int i = middle+1; i <= right; i++) {
             	rightArray += array[i] + " ";
             }
-            sortingStepProcess.append("Left array: " + leftArray + "\n");
-            sortingStepProcess.append("Right array: " + rightArray + "\n\n");
+            sortingStepProcess += "Left array: " + leftArray + "\n";
+            sortingStepProcess += "Right array: " + rightArray + "\n\n";
             sortingProcessArray[step] = sortingStepProcess;
             step++;
             mergeSort(array, left, middle );
@@ -100,7 +100,7 @@ public class MergeSort extends SortingAlgorithm{
         }
     }
     @Override 
-	public StringBuffer[] Sort() {
+	public String[] Sort() {
 		mergeSort(array, 0, arrayLength - 1);
 		return sortingProcessArray;
 	}
